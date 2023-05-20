@@ -5,32 +5,34 @@ import requests
 
 class WolfConnect:
     def __init__(self, appid: str, query: str) -> None:
-        self.query = query.strip()
         self.appid = appid.strip()
+        self.query = urllib.parse.quote_plus(
+            query.strip()
+        )
 
-    def short_query(self):
+    def short_query(self) -> str:
         response = requests.get(
             url=API.SHORT_ANSWERS.format(
                 self.appid,
-                urllib.parse.quote_plus(self.query)
+                self.query
             )
         )
         return response.text
 
-    def spoken_query(self):
+    def spoken_query(self) -> str:
         reponse = requests.get(
             url=API.SPOKEN_RESULTS.format(
                 self.appid,
-                urllib.parse.quote_plus(self.query)
+                self.query
             )
         )
         return reponse.text
-    
-    def llm(self):
+
+    def llm(self) -> str:
         response = requests.get(
             url=API.LLM.format(
-            urllib.parse.quote_plus(self.query),
-            self.appid
+                self.query,
+                self.appid
             )
         )
         return response.text
