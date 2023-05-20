@@ -25,3 +25,12 @@ class WolfConnect:
             )
         )
         return reponse.text
+    
+    def llm(self):
+        response = requests.get(
+            url=API.LLM.format(
+            urllib.parse.quote_plus(self.query),
+            self.appid
+            )
+        )
+        return response.text
