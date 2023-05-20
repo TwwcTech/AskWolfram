@@ -8,5 +8,7 @@ if __name__ == "__main__":
         query=user_query
     )
 
-    print("\n"*2, ask.short_query(), "\n"*2)
-    print("\n"*2, ask.spoken_query(), "\n"*2)
+    print("\n"*2)
+    print(ask.short_query())
+    print(ask.spoken_query())
+    print("\n"*2)
