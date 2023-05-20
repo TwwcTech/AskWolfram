@@ -1,7 +1,7 @@
 from backend.connectwolf import WolfConnect
 
 if __name__ == "__main__":
-    user_query = input("Query: ")
+    user_query = input("\nQuery: ")
 
     ask = WolfConnect(
         appid="2HPKYW-33TYAJLGTY",
