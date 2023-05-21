@@ -5,4 +5,5 @@ class API:
 
 
 class WolframVariables:
+    # TODO: create a reg_manager method and add appid to the regkey; read from there to access API
     APPID = "2HPKYW-33TYAJLGTY"
