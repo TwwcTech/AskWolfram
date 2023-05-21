@@ -7,3 +7,8 @@ class API:
 class WolframVariables:
     # TODO: create a reg_manager method and add appid to the regkey; read from there to access API
     APPID = "2HPKYW-33TYAJLGTY"
+
+
+class SysResponses:
+    EXIT = "\nExiting the program, thank you for using 'askwolfram'\n"
+    CONT = "Press 'Enter' to continue: "
