@@ -1,1 +1,4 @@
-__all__ = ["connectwolf"]
+__all__ = [
+    "connectwolf",
+    "console_manager"
+]
