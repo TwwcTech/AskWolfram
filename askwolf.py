@@ -1,22 +1,22 @@
 from backend.console_manager import manageconsole as mc
 from backend.console_manager.menus import MunuPicker
 from backend.connectwolf import WolfConnect
+from backend.regiman import RegiMan
 from resources import statics
+from time import sleep
 import sys
 
-"""
-# TODO: create a process to store the appid in the reg of the current user...
-... making it (WAY) more secure than hardcoding it in the program, but also...
-... makes it universal; anyone can use the program and not only it's author
-
-# TODO: create a flow that checks for the appid; if the appid is found...
-... read it, store it and use the appid for the appid perameter of the ...
-... program; if the appid is not found, assume that its the first time...
-... the program has ran and begin the setup process to continue
-"""
-
 if __name__ == "__main__":
-    while True:
+    regmanager = RegiMan(
+        regpath=statics.RegVariables.HKEYPATH,
+        appname=statics.RegVariables.APPNAME
+    )
+    applist = regmanager.enum_reg()
+    regstatus = regmanager.check_regkey(
+        apps=applist
+    )
+    while regstatus == True:
+        appkey = regmanager.read_regkey()
         mc.clear_console()
         mainmenu = MunuPicker(title="Main Menu").show_mainmenu()
         menu_choice = input("Enter an option: ").strip()
@@ -24,7 +24,7 @@ if __name__ == "__main__":
             case "1":
                 query_input = input("Query: ")
                 ask_simple = WolfConnect(
-                    appid=statics.WolframVariables.APPID,  # TODO: remove the hardcode
+                    appid=appkey,
                     query=query_input
                 )
                 mc.space(1)
@@ -34,10 +34,9 @@ if __name__ == "__main__":
                 mc.space(1)
                 simplecont_input = input(statics.SysResponses.CONT)
             case "2":
-                comp_query = input(
-                    "Comparative Query: [ex. 'What are the largest 3 countries?']: ").strip()
+                comp_query = input("Query: ").strip()
                 ask_comp = WolfConnect(
-                    appid=statics.WolframVariables.APPID,  # TODO: remove the hardcode
+                    appid=appkey,
                     query=comp_query
                 )
                 mc.space(1)
@@ -47,3 +46,24 @@ if __name__ == "__main__":
             case "3": sys.exit(
                 statics.SysResponses.EXIT
             )
+    else:
+        while True:
+            mc.clear_console()
+            setup_input = input(
+                statics.SetupResponses.QUESTION).upper().strip()
+            match setup_input:
+                case "Y":
+                    print(statics.SetupResponses.WELCOME)
+                    appid_input = input("Enter your APPID: ").strip()
+                    regmanager.create_regkey(
+                        appid=appid_input
+                    )
+                    print(statics.SetupResponses.APPID_SUCCESS)
+                    sleep(5)
+                    break
+                case "N":
+                    print(statics.SetupResponses.REGKEY_STATUS_ERROR)
+                    sleep(5)
+                    break
+                case _:
+                    print(statics.SetupResponses.INPUT_ERROR)
