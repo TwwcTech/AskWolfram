@@ -3,3 +3,6 @@ class API:
     SPOKEN_RESULTS = "http://api.wolframalpha.com/v1/spoken?appid={}&i={}%3f"
     LLM = "https://www.wolframalpha.com/api/v1/llm-api?input={}&appid={}"
 
+
+class WolframVariables:
+    APPID = "2HPKYW-33TYAJLGTY"
