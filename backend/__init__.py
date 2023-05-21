@@ -1,4 +1,5 @@
 __all__ = [
     "connectwolf",
-    "console_manager"
+    "console_manager",
+    "regiman"
 ]
