@@ -49,6 +49,7 @@ if __name__ == "__main__":
     else:
         while True:
             mc.clear_console()
+            mc.space(1)
             setup_input = input(
                 statics.SetupResponses.QUESTION).upper().strip()
             match setup_input:
@@ -59,11 +60,14 @@ if __name__ == "__main__":
                         appid=appid_input
                     )
                     print(statics.SetupResponses.APPID_SUCCESS)
+                    mc.space(1)
                     sleep(5)
                     break
                 case "N":
                     print(statics.SetupResponses.REGKEY_STATUS_ERROR)
+                    mc.space(1)
                     sleep(5)
                     break
                 case _:
                     print(statics.SetupResponses.INPUT_ERROR)
+                    mc.space(1)
