@@ -32,10 +32,8 @@ class RegiMan:
                 )
             return appnames
         except Exception as ex:
-            raise Exception(
-                ex,
-                print(rr.ENUM_ERROR)
-            )
+            ex.add_note(rr.ENUM_ERROR)
+            raise Exception(ex)
 
     def check_regkey(self, apps: list) -> bool: return True if re.search(
         r"\b{}\b".format(
@@ -58,10 +56,8 @@ class RegiMan:
                 winreg.REG_SZ, appid
             )
         except Exception as ex:
-            raise Exception(
-                ex,
-                print(rr.CREATEKEY_ERROR)
-            )
+            ex.add_note(rr.CREATEKEY_ERROR)
+            raise Exception(ex)
 
     def read_regkey(self) -> str:
         try:
@@ -76,7 +72,5 @@ class RegiMan:
             id, index = appid
             return id
         except Exception as ex:
-            raise Exception(
-                ex,
-                print(rr.READKEY_ERROR)
-            )
+            ex.add_note(rr.READKEY_ERROR)
+            raise Exception(ex)
