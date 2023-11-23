@@ -22,7 +22,7 @@ Please note that the free access allows up to 2,000 non-commercial API calls per
 
 ## How to Use AskWolfram
 
-When you run **AskWolfram** for the first time, it will ask you for the Wolfram Alpha API key and will save it to the Registry - "Computer\HKEY_CURRENT_USER\Software\AskWolfram" - if you have entered an incorrect key, you can update it here.
+When you run **AskWolfram** for the first time, it will ask you for the Wolfram Alpha API key and will save it to the Registry - **Computer\HKEY_CURRENT_USER\Software\AskWolfram** - if you have entered an incorrect key, you can update it here.
 
 Once you have your Wolfram Alpha API key, you can input it into the AskWolfram application. Simply input your query, and AskWolfram will output the results directly from Wolfram Alpha's computational knowledge engine.
 
@@ -30,6 +30,6 @@ We hope you enjoy using AskWolfram and find it a valuable tool in your computati
 
 Please feel free to contribute to the AskWolfram project on GitHub and share any issues or suggestions you may have. Happy computing! 🚀
 
-**Source**:
+**Wolfram Alpha API URL**:
 1. Wolfram|Alpha Developer Portal: Access. https://developer.wolframalpha.com/access.
 
