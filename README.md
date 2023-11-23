@@ -31,6 +31,7 @@ We hope you enjoy using AskWolfram and find it a valuable tool in your computati
 Please feel free to contribute to the AskWolfram project on GitHub and share any issues or suggestions you may have. Happy computing! 🚀
 
 ##Source:##
+
 (1) Wolfram|Alpha Developer Portal. https://developer.wolframalpha.com/.
 (2) Wolfram|Alpha Full Results API Reference. http://products.wolframalpha.com/api/documentation/.
 (3) Wolfram|Alpha APIs: Computational Knowledge Integration. https://products.wolframalpha.com/api/.
