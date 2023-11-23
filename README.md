@@ -30,5 +30,5 @@ We hope you enjoy using AskWolfram and find it a valuable tool in your computati
 
 Please feel free to contribute to the AskWolfram project on GitHub and share any issues or suggestions you may have. Happy computing! 🚀
 
-**Wolfram Alpha API URL**: Wolfram|Alpha Developer Portal: Access. https://developer.wolframalpha.com/access.
+**Wolfram Alpha API URL**: https://developer.wolframalpha.com/access.
 
